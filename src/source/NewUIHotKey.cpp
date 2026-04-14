@@ -344,6 +344,15 @@ bool SEASON3B::CNewUIHotKey::UpdateKeyEvent()
         PlayBuffer(SOUND_CLICK01);
         return false;
     }
+    else if (SEASON3B::IsPress(VK_HOME)) // Thêm phím HOME ở đây
+    {
+        if (g_pChatInputBox->HaveFocus() == false) // Kiểm tra không trong khung chat
+        {
+            MUHelper::g_MuHelper.Toggle();  // Bật/Tắt Auto
+            PlayBuffer(SOUND_CLICK01);      // Thêm tiếng "Click" đặc trưng của MU
+            return false;                   // Trả về false để báo đã xử lý xong key này
+        }
+    }
     return true;
 }
 

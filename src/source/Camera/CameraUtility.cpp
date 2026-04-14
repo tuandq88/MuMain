@@ -285,7 +285,7 @@ static void SetCameraFOV()
     }
     else
     {
-        CameraFOV = 30.f;
+        CameraFOV = 37.f;
     }
 }
 
